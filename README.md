@@ -10,3 +10,5 @@ URL of the buggy Lojinha API V2 REST APIs: http://165.227.93.41/lojinha-bugada/v
 [Swagger Editor](https://editor.swagger.io/)
 
 [Swagger documentation of the RESTful APIs](http://165.227.93.41/lojinha/lojinha-v2.yml)
+
+[Getting started with REST Assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
