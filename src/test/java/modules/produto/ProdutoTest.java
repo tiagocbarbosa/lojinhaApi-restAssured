@@ -1,11 +1,18 @@
 package modules.produto;
 
+import dataFactory.ProdutoDataFactory;
+import dataFactory.UsuarioDataFactory;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pojo.ComponentePojo;
+import pojo.ProdutoPojo;
 import pojo.UsuarioPojo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
@@ -22,14 +29,10 @@ public class ProdutoTest {
         baseURI = "http://165.227.93.41";
         basePath = "/lojinha";
 
-        UsuarioPojo usuario = new UsuarioPojo();
-        usuario.setUsuarioLogin("admin");
-        usuario.setUsuarioSenha("admin");
-
         // Obter o token do usuário admin
         this.token = given()
                 .contentType(ContentType.JSON)
-                .body(usuario)
+                .body(UsuarioDataFactory.criarUsuarioAdmin())
             .when()
                 .post("/v2/login")
             .then()
@@ -45,21 +48,7 @@ public class ProdutoTest {
         given()
                 .contentType(ContentType.JSON)
                 .header("token", this.token)
-                .body("{\n" +
-                        "  \"produtoNome\": \"Playstation 0\",\n" +
-                        "  \"produtoValor\": 0.00,\n" +
-                        "  \"produtoCores\": [\n" +
-                        "    \"branco\",\n" +
-                        "    \"cinza\"\n" +
-                        "  ],\n" +
-                        "  \"produtoUrlMock\": \"string\",\n" +
-                        "  \"componentes\": [\n" +
-                        "    {\n" +
-                        "      \"componenteNome\": \"Controle\",\n" +
-                        "      \"componenteQuantidade\": 2\n" +
-                        "    }\n" +
-                        "  ]\n" +
-                        "}")
+                .body(ProdutoDataFactory.criarProdutoBasicoComValorIgualA(0.00))
             .when()
                 .post("/v2/produtos")
             .then()
@@ -71,26 +60,12 @@ public class ProdutoTest {
     @Test
     @DisplayName("Validar limite do valor do Produto: valor igual à 7001,00")
     public void testValidarLimiteValorProdutoMaiorSeteMil() {
-        // Tentar inserir um produto com valor 0.00 e validar que a mensagem de erro foi apresentada
+        // Tentar inserir um produto com valor 7001.00 e validar que a mensagem de erro foi apresentada
         // e o status code retornado foi 422
         given()
                 .contentType(ContentType.JSON)
                 .header("token", this.token)
-                .body("{\n" +
-                        "  \"produtoNome\": \"Playstation 5\",\n" +
-                        "  \"produtoValor\": 7001.00,\n" +
-                        "  \"produtoCores\": [\n" +
-                        "    \"branco\",\n" +
-                        "    \"cinza\"\n" +
-                        "  ],\n" +
-                        "  \"produtoUrlMock\": \"string\",\n" +
-                        "  \"componentes\": [\n" +
-                        "    {\n" +
-                        "      \"componenteNome\": \"Controle\",\n" +
-                        "      \"componenteQuantidade\": 2\n" +
-                        "    }\n" +
-                        "  ]\n" +
-                        "}")
+                .body(ProdutoDataFactory.criarProdutoBasicoComValorIgualA(7001.00))
             .when()
                 .post("/v2/produtos")
             .then()
