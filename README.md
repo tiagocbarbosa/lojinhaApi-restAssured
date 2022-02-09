@@ -12,4 +12,4 @@ URL of the buggy Lojinha API V2 REST APIs: http://165.227.93.41/lojinha-bugada/v
 
 [Getting started with REST Assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
 
-[Jackson Databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.13.1): it enables us to pass a POJO in the "body" method from REST Assured library, for example.  
+[Jackson Databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.13.1): it enables us to pass a POJO in the "body" method of the REST Assured library, for example.  
