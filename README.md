@@ -1,6 +1,5 @@
 # lojinhaApi-restAssured
-[RESTful APIs](https://www.postman.com/restless-trinity-831044/workspace/lojinha-api/overview) created by [Julio de Lima](http://www.juliodelima.com.br/) to be tested with REST Assured library.
-
+In this project I'm using REST Assured library to test the [RESTful APIs](https://www.postman.com/restless-trinity-831044/workspace/lojinha-api/overview) created by [Julio de Lima](http://www.juliodelima.com.br/).
 
 ## References
 URL of the Lojinha API V2 REST APIs: http://165.227.93.41/lojinha/v2/
