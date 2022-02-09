@@ -2,20 +2,12 @@ package modules.produto;
 
 import dataFactory.ProdutoDataFactory;
 import dataFactory.UsuarioDataFactory;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pojo.ComponentePojo;
-import pojo.ProdutoPojo;
-import pojo.UsuarioPojo;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
 @DisplayName("Testes de API REST do módulo de Produto")
@@ -38,6 +30,26 @@ public class ProdutoTest {
             .then()
                 .extract()
                     .path("data.token");
+    }
+
+    // TODO: Tentar inserir um produto sem o campo produtoNome
+
+    // TODO: Tentar inserir um produto sem o campo produtoCores
+
+    @Test
+    @DisplayName("Validar campos obrigatórios: requisição sem o campo produtoValor")
+        public void testValidarCampoObrigatorioProdutoValor() {
+        given()
+                .contentType(ContentType.JSON)
+                .header("token", this.token)
+                .body(ProdutoDataFactory.criarProdutoSemCampoProdutoValor())
+            .when()
+                .post("/v2/produtos")
+            .then()
+                .assertThat()
+                    .body("error", equalTo("produtoNome, produtoValor e produtoCores são campos obrigatórios"))
+                    .statusCode(400);
+
     }
 
     @Test
