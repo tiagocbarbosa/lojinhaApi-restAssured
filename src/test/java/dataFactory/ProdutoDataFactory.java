@@ -57,6 +57,17 @@ public class ProdutoDataFactory {
         return produto;
     }
 
+    public static ProdutoPojo criarProdutoBasico() {
+        ProdutoPojo produto = new ProdutoPojo();
+        produto.setProdutoNome("Playstation 5");
+        produto.setProdutoValor(4500.00);
+        produto.setProdutoCores(criarCoresBrancoEPreto());
+        produto.setProdutoUrlMock("");
+        produto.setComponentes(criarComponentesBasicos());
+
+        return produto;
+    }
+
     public static ProdutoPojo criarProdutoBasicoComValorIgualA(double valor) {
         ProdutoPojo produto = new ProdutoPojo();
         produto.setProdutoNome("Playstation 5");
