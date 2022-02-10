@@ -6,7 +6,9 @@ I'm using the framework to learn it, and a challenge I faced was a interesting w
 In the future I hope to add more testing scenarios to the application.
 
 ## Prerequisites
-(creating...)
+- IntelliJ IDEA
+- Maven 3+
+- JDK 17+
 
 ## Installation
 (creating...)
