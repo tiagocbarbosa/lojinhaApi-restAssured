@@ -5,6 +5,9 @@ I'm using the framework to learn it. A challenge I faced was a interesting way t
 
 In the future I hope to add more testing scenarios to the application.
 
+## Installation
+(creating...)
+
 ## References
 URL of the Lojinha API V2 REST APIs: http://165.227.93.41/lojinha/v2/
 
