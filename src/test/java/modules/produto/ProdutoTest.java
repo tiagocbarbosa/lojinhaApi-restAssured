@@ -33,8 +33,20 @@ public class ProdutoTest {
     }
 
     // TODO: Tentar inserir um produto sem o campo produtoNome
-
-    // TODO: Tentar inserir um produto sem o campo produtoCores
+    @Test
+    @DisplayName("Validar campos obrigatórios: requisição sem o campo produtoNome")
+    public void testValidarCampoObrigatorioProdutoNome() {
+        given()
+                .contentType(ContentType.JSON)
+                .header("token", this.token)
+                .body(ProdutoDataFactory.criarProdutoSemCampoProdutoNome())
+            .when()
+                .post("/v2/produtos")
+            .then()
+                .assertThat()
+                    .body("error", equalTo("produtoNome, produtoValor e produtoCores são campos obrigatórios"))
+                    .statusCode(400);
+    }
 
     @Test
     @DisplayName("Validar campos obrigatórios: requisição sem o campo produtoValor")
@@ -49,8 +61,9 @@ public class ProdutoTest {
                 .assertThat()
                     .body("error", equalTo("produtoNome, produtoValor e produtoCores são campos obrigatórios"))
                     .statusCode(400);
-
     }
+
+    // TODO: Tentar inserir um produto sem o campo produtoCores
 
     @Test
     @DisplayName("Validar limite do valor do Produto: valor igual à zero")
