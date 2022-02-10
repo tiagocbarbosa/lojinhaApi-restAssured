@@ -76,13 +76,13 @@ public class ProdutoTest {
                     .body("error", equalTo("produtoNome, produtoValor e produtoCores são campos obrigatórios"))
                     .statusCode(400);
     }
-    
+
     @Test
     @DisplayName("Validar token: envio sem o respectivo key no header")
     public void testValidarHeaderToken() {
         given()
                 .contentType(ContentType.JSON)
-                .body(ProdutoDataFactory.criarProdutoSemCampoProdutoCores())
+                .body(ProdutoDataFactory.criarProdutoBasico())
             .when()
                 .post("/v2/produtos")
             .then()
@@ -98,7 +98,7 @@ public class ProdutoTest {
         given()
                 .contentType(ContentType.JSON)
                 .header("token", this.token)
-                .body(ProdutoDataFactory.criarProdutoBasico())
+                .body(ProdutoDataFactory.criarProdutoBasicoComValorIgualA(0.00))
             .when()
                 .post("/v2/produtos")
             .then()
