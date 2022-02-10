@@ -8,6 +8,14 @@ In the future I hope to add more testing scenarios to the application.
 ## Installation
 (creating...)
 
+## Usage
+For instance, open the [ProdutoTest](https://github.com/tiagocbarbosa/lojinhaApi-restAssured/blob/main/src/test/java/modules/produto/ProdutoTest.java) file in IntelliJ, select "Run Test" and run the tests. The IDE's console output should look like this:
+
+```
+Process finished with exit code 0
+```
+
+
 ## References
 URL of the Lojinha API V2 REST APIs: http://165.227.93.41/lojinha/v2/
 
