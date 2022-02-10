@@ -14,7 +14,6 @@ In the future I hope to add more testing scenarios to the application.
 1. Clone the repository in your machine.
 2. Open it in IntelliJ.
 3. Install JDK through IntelliJ in case you don't have it.
-4. 
 
 ## Usage
 For instance, open the [ProdutoTest](https://github.com/tiagocbarbosa/lojinhaApi-restAssured/blob/main/src/test/java/modules/produto/ProdutoTest.java) file in IntelliJ and run the tests. The IDEA's console output should look like this:
