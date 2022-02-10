@@ -5,11 +5,14 @@ I'm using the framework to learn it. A challenge I faced was a interesting way t
 
 In the future I hope to add more testing scenarios to the application.
 
+## Prerequisites
+(creating...)
+
 ## Installation
 (creating...)
 
 ## Usage
-For instance, open the [ProdutoTest](https://github.com/tiagocbarbosa/lojinhaApi-restAssured/blob/main/src/test/java/modules/produto/ProdutoTest.java) file in IntelliJ, select "Run Test" and run the tests. The IDE's console output should look like this:
+For instance, open the [ProdutoTest](https://github.com/tiagocbarbosa/lojinhaApi-restAssured/blob/main/src/test/java/modules/produto/ProdutoTest.java) file in IntelliJ and run the tests. The IDEA's console output should look like this:
 
 ```
 Process finished with exit code 0
