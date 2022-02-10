@@ -1,7 +1,7 @@
 # lojinhaApi-restAssured
 My application tests the [RESTful APIs](https://www.postman.com/restless-trinity-831044/workspace/lojinha-api/overview) created by [Júlio de Lima](http://www.juliodelima.com.br/) using REST Assured.
 
-I'm using the framework to learn it. A challenge I faced was a interesting way to pass the body request with REST Assured without writing the JSON in the code. [Jackson Databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.13.1) helped me with that.
+I'm using the framework to learn it, and a challenge I faced was a interesting way to pass the body request with REST Assured without writing the JSON in the code. [Jackson Databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.13.1) helped me with that.
 
 In the future I hope to add more testing scenarios to the application.
 
